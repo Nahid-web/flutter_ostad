@@ -22,21 +22,15 @@ class MyApp extends StatelessWidget {
           title: Text('GridView'),
           centerTitle: true,
         ),
-        body: GridView.builder(
-          padding: EdgeInsets.all(10),
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 300,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20
+        body: Center(
+          child: CircleAvatar(
+            child: Text(
+              'Nahid',
+              style: TextStyle(fontSize: 50),
+            ),
+            backgroundColor: Colors.red,
+            maxRadius: 200,
           ),
-          itemCount: colorArray.length,
-          itemBuilder: (context, index) {
-            return Container(
-              height: 200,
-              width: 200,
-              color: colorArray[index],
-            );
-          },
         ),
       ),
     );
