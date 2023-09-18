@@ -4,7 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -22,36 +22,21 @@ class MyApp extends StatelessWidget{
           title: Text('GridView'),
           centerTitle: true,
         ),
-        body: GridView(
+        body: GridView.builder(
           padding: EdgeInsets.all(10),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 300,
             crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
+            mainAxisSpacing: 20
           ),
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              color: colorArray[0] ,
-            ),Container(
-              height: 100,
-              width: 100,
-              color: colorArray[1] ,
-            ),Container(
-              height: 100,
-              width: 100,
-              color: colorArray[2] ,
-            ),Container(
-              height: 100,
-              width: 100,
-              color: colorArray[3] ,
-            ),Container(
-              height: 100,
-              width: 100,
-              color: colorArray[4] ,
-            ),
-          ],
+          itemCount: colorArray.length,
+          itemBuilder: (context, index) {
+            return Container(
+              height: 200,
+              width: 200,
+              color: colorArray[index],
+            );
+          },
         ),
       ),
     );
