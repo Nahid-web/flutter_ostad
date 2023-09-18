@@ -9,30 +9,49 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    final List nameArray = [
-      'Nahid','Shihab','Shimul','Shuvo','Rahim',
+    final List colorArray = [
+      Colors.red,
+      Colors.green,
+      Colors.black,
+      Colors.blue,
+      Colors.purple,
     ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('ListView'),
+          title: Text('GridView'),
           centerTitle: true,
         ),
-        body: ListView.separated(
-          itemCount: nameArray.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Icon(Icons.person_pin),
-              title: Text(nameArray[index]),
-              subtitle: Text('012343434'),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Divider(
-              endIndent: 400,
-              thickness: 5,
-            );
-          },
+        body: GridView(
+          padding: EdgeInsets.all(10),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+          ),
+          children: [
+            Container(
+              height: 100,
+              width: 100,
+              color: colorArray[0] ,
+            ),Container(
+              height: 100,
+              width: 100,
+              color: colorArray[1] ,
+            ),Container(
+              height: 100,
+              width: 100,
+              color: colorArray[2] ,
+            ),Container(
+              height: 100,
+              width: 100,
+              color: colorArray[3] ,
+            ),Container(
+              height: 100,
+              width: 100,
+              color: colorArray[4] ,
+            ),
+          ],
         ),
       ),
     );
