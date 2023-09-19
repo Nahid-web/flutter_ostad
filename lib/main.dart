@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ostad/tabBars/email.dart';
+import 'package:flutter_ostad/tabBars/home.dart';
+import 'package:flutter_ostad/tabBars/person.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,67 +12,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.blueGrey,
-        appBar: AppBar(
-          title: const Text('Text Field'),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('TabBar'),
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.home),),
+                Tab(icon: Icon(Icons.email),),
+                Tab(icon: Icon(Icons.person),)
+              ],
+            ),
+          ),
+          body: const TabBarView(
             children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                child: const TextField(
-                  style: TextStyle(
-                    color: Colors.blue,
-                  ),
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red, width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue, width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    labelText: 'Your Name',
-                    labelStyle: TextStyle(color: Colors.white70),
-                    hintText: 'Enter your name',
-                    fillColor: Colors.white60,
-                    filled: true,
-                    prefixIcon: Icon(Icons.person),
-                  ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(10),
-                child: const TextField(
-                  style: TextStyle(
-                    color: Colors.blue,
-                  ),
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red, width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue, width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    labelText: 'Your Password',
-                    labelStyle: TextStyle(color: Colors.white70),
-                    hintText: 'Enter your Password',
-                    fillColor: Colors.white60,
-                    filled: true,
-                    prefixIcon: Icon(Icons.email),
-                  ),
-                ),
-              ),
-              ElevatedButton(onPressed: () {}, child: Text('Submit')),
+              Home(),
+              Email(),
+              Person(),
             ],
           ),
+
         ),
       ),
     );
