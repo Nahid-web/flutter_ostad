@@ -12,26 +12,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Progress Indicator'),
+          title: const Text('Aspect Ratio'),
+          centerTitle: true,
         ),
-        body: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircularProgressIndicator(
-                strokeWidth: 5,
-                color: Colors.red,
-                backgroundColor: Colors.blue,
-              ),
-              SizedBox(height: 20,),
-              LinearProgressIndicator(
-                color: Colors.red,
-                backgroundColor: Colors.blue,
-                minHeight: 5,
-
-              ),
-
-            ],
+        body: Container(
+          width: double.infinity,
+          height: 100,
+          alignment: Alignment.center,
+          color: Colors.green,
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Container(
+              color: Colors.red,
+            ),
           ),
         ),
       ),
