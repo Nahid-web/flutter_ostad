@@ -12,22 +12,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Card'),
-          centerTitle: true,
+          title: const Text('Progress Indicator'),
         ),
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(
+                strokeWidth: 5,
+                color: Colors.red,
+                backgroundColor: Colors.blue,
+              ),
+              SizedBox(height: 20,),
+              LinearProgressIndicator(
+                color: Colors.red,
+                backgroundColor: Colors.blue,
+                minHeight: 5,
 
-        body: Center(
-            child: Card(
-              shadowColor: Colors.red,
-                elevation: 20,
-                color: Colors.blueGrey,
-                child: Padding(
-                  padding: const EdgeInsets.all(50),
-                  child: Text('Nahid Amin'),
-                )),),
+              ),
+
+            ],
+          ),
+        ),
       ),
     );
   }
 }
-
-
