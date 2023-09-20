@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
