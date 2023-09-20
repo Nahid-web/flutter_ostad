@@ -15,25 +15,37 @@ class MyApp extends StatelessWidget {
           title: const Text('Layout Builder'),
           centerTitle: true,
         ),
-        body: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints){
-            if(constraints.maxWidth > 600){
-              return Container(
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
                 height: 200,
-                width: 400,
-                color: Colors.green,
-
-              );
-            }
-            else {
-              return Container(
-                height: 100,
                 width: 200,
                 color: Colors.red,
-
-              );
-            }
-          },
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.blue,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.green,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.orange,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.red,
+              ),
+            ],
+          ),
         ),
       ),
     );
