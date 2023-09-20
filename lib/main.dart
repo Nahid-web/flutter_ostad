@@ -17,11 +17,12 @@ class MyApp extends StatelessWidget {
         ),
         body: Container(
           width: double.infinity,
-          height: 100,
+          height: 200,
           alignment: Alignment.center,
           color: Colors.green,
-          child: AspectRatio(
-            aspectRatio: 16 / 9,
+          child: FractionallySizedBox(
+            widthFactor: 0.5,
+            heightFactor: 0.5,
             child: Container(
               color: Colors.red,
             ),
