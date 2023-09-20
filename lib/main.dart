@@ -16,33 +16,33 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
+          scrollDirection: Axis.horizontal,
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 height: 200,
-                width: 200,
+                width: 400,
                 color: Colors.red,
               ),
               Container(
                 height: 200,
-                width: 200,
+                width: 400,
                 color: Colors.blue,
               ),
               Container(
                 height: 200,
-                width: 200,
+                width: 400,
                 color: Colors.green,
               ),
               Container(
                 height: 200,
-                width: 200,
+                width: 400,
                 color: Colors.orange,
               ),
               Container(
                 height: 200,
-                width: 200,
+                width: 400,
                 color: Colors.red,
               ),
             ],
