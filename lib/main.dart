@@ -12,21 +12,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Aspect Ratio'),
+          title: const Text('Layout Builder'),
           centerTitle: true,
         ),
-        body: Container(
-          width: double.infinity,
-          height: 200,
-          alignment: Alignment.center,
-          color: Colors.green,
-          child: FractionallySizedBox(
-            widthFactor: 0.5,
-            heightFactor: 0.5,
-            child: Container(
-              color: Colors.red,
-            ),
-          ),
+        body: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints){
+            if(constraints.maxWidth > 600){
+              return Container(
+                height: 200,
+                width: 400,
+                color: Colors.green,
+
+              );
+            }
+            else {
+              return Container(
+                height: 100,
+                width: 200,
+                color: Colors.red,
+
+              );
+            }
+          },
         ),
       ),
     );
