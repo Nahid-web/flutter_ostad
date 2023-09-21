@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ostad/style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-    var position = MediaQuery.of(context).orientation;
 
     return MaterialApp(
       home: Scaffold(
@@ -23,9 +21,8 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('The height is $height'),
-              Text('THe width is $width'),
-              Text('The positon is $position'),
+              Text('This is Nahid Amin, Flutter developer in 2024', style: headline(context),),
+
             ],
           ),
         )
