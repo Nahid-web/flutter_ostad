@@ -9,48 +9,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    var position = MediaQuery.of(context).orientation;
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Layout Builder'),
+          title: const Text('Media Query'),
           centerTitle: true,
         ),
-        body: Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.red,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.green,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.blue,
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.yellow,
-              ),
-            ),
-          ],
-        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('The height is $height'),
+              Text('THe width is $width'),
+              Text('The positon is $position'),
+            ],
+          ),
+        )
       ),
     );
   }
